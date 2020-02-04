@@ -36,6 +36,13 @@ export class SharedService {
     params = params.append('type', 'artist');
     return this.http.get(this.baseUrl + 'search', { params });
   }
+
+  albumSearch(searchQuery) {
+    let params = new HttpParams();
+    params = params.append('q', searchQuery);
+    params = params.append('type', 'artist');
+    return this.http.get(this.baseUrl + 'search', { params });
+  }
   // validate exsistance of token
   loggedIn() {
     const token = localStorage.getItem('token');
