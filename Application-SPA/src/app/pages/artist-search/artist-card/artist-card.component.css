@@ -1,10 +1,16 @@
+.card {
+  height: 100%;
+}
+
 .card-img-top {
   height: 200px;
-
 }
-.card-title{
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  max-width: 100%;
+
+.card-body {
+  display: flex;
+  flex-flow: column;
+}
+
+.card-body>star-rating {
+  margin-top: auto;
 }
