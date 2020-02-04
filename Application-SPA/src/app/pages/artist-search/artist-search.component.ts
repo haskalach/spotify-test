@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-artist-search',
@@ -7,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtistSearchComponent implements OnInit {
   searchQuery = '';
-  constructor() { }
+  constructor(private sharedservice: SharedService) { }
 
   ngOnInit() {
 
   }
-
+  artistSearch() {
+    this.sharedservice.artistsSearch(this.searchQuery).subscribe(next => {
+      console.log({ next });
+    })
+  }
 }

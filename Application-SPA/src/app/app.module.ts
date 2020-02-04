@@ -29,7 +29,7 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: ['https://api.spotify.com/'],
+        whitelistedDomains: ['api.spotify.com'],
         blacklistedRoutes: []
       }
     }),

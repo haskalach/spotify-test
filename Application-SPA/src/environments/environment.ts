@@ -11,6 +11,7 @@ export const environment = {
     state: '',
     show_dialog: true,
   },
-  apiUrl: 'https://accounts.spotify.com/'
+  apiAuthUrl: 'https://accounts.spotify.com/',
+  apiUrl : 'https://api.spotify.com/v1/'
 };
 

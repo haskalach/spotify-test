@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private sharedService: SharedService, private route: ActivatedRoute, private router: Router) { }
+  constructor(public sharedService: SharedService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     if (this.route.snapshot.fragment) {
