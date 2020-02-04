@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { ErrorInterceptorService } from './services/error-interceptor.service';
 import { ArtistCardComponent } from './pages/artist-search/artist-card/artist-card.component';
 import { RatingModule } from 'ng-starrating';
+import { AlbumCardComponent } from './pages/album-search/album-card/album-card.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -23,7 +24,8 @@ export function tokenGetter() {
     AlbumSearchComponent,
     ArtistSearchComponent,
     HomeComponent,
-    ArtistCardComponent
+    ArtistCardComponent,
+    AlbumCardComponent
   ],
   imports: [
     BrowserModule,

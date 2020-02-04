@@ -1,0 +1,9 @@
+.card-img-top {
+  height: 250px;
+}
+
+.bottom-info {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}

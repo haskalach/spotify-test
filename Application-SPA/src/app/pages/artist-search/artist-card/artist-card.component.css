@@ -1,16 +1,7 @@
-.card {
-  height: 100%;
+.card-body>star-rating {
+  margin-top: auto;
 }
-
 .card-img-top {
   height: 200px;
 }
 
-.card-body {
-  display: flex;
-  flex-flow: column;
-}
-
-.card-body>star-rating {
-  margin-top: auto;
-}

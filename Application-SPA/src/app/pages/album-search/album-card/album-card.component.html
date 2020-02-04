@@ -1,0 +1,17 @@
+<div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+  <div class="col mb-4" *ngFor="let album of albums">
+    <div class="card">
+      <img src="{{ album.images[0]?.url || '../../../../assets/images/user.png' }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{album.name}}</h5>
+        <p *ngFor="let artist of album.artists">{{artist.name}}</p>
+        <div class="bottom-info">
+          <span>{{album.release_date}}</span>
+          <span>{{album.total_tracks}} Tracks</span>
+          <a href="{{album.external_urls.spotify}}"  target="_blank">Preview On Spotify </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

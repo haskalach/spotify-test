@@ -37,11 +37,8 @@ export class SharedService {
     return this.http.get(this.baseUrl + 'search', { params });
   }
 
-  albumSearch(searchQuery) {
-    let params = new HttpParams();
-    params = params.append('q', searchQuery);
-    params = params.append('type', 'artist');
-    return this.http.get(this.baseUrl + 'search', { params });
+  albumSearch(id) {
+    return this.http.get(this.baseUrl + 'artists/' + id + '/albums');
   }
   // validate exsistance of token
   loggedIn() {

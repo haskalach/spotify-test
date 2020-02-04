@@ -4,3 +4,11 @@
 .cursor-pointer {
   cursor: pointer;
 }
+.card {
+  height: 100%;
+}
+
+.card-body {
+  display: flex;
+  flex-flow: column;
+}
