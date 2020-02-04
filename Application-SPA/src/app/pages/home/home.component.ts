@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['/artist-search']);
     } else {
       if (this.sharedService.loggedIn()) {
-        this.sharedService.loggedInActive = true;
         this.router.navigate(['/artist-search']);
       }
     }

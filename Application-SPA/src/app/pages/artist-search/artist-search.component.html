@@ -1,1 +1,7 @@
-<input type="text" class="form-control" [(ngModel)]="searchQuery" placeholder="search for an artist" (keyup.enter)="artistSearch()">
+<input type="text" class="form-control mb-4 search-control" [(ngModel)]="searchQuery" placeholder="search for an artist"
+  (keyup.enter)="artistSearch()">
+
+
+<app-artist-card [artists]="artistsResult">
+
+</app-artist-card>

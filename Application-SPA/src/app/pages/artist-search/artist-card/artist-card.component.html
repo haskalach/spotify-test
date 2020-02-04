@@ -1,0 +1,13 @@
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+  <div class="col mb-4" *ngFor="let artist of artists">
+    <div class="card cursor-pointer" (click)="goToAlbum(artist.id)">
+      <img src="{{ artist.images[0]?.url || '../../../../assets/images/user.png' }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{artist.name}}</h5>
+        <p class="card-text">{{artist.followers.total}} followers</p>
+        <star-rating value="{{artist.popularity/10}}" totalstars="5" checkedcolor="orange" uncheckedcolor="grey"
+          size="24px" readonly="true"></star-rating>
+      </div>
+    </div>
+  </div>
+</div>

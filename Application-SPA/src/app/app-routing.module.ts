@@ -18,7 +18,7 @@ const routes: Routes = [
     component: ArtistSearchComponent,
   },
   {
-    path: 'album-search',
+    path: 'album-search/:id',
     component: AlbumSearchComponent,
   }
 ];

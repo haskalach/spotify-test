@@ -22,6 +22,7 @@
     "@auth0/angular-jwt": "^3.0.1",
     "bootstrap": "^4.4.1",
     "core-js": "^2.5.4",
+    "ng-starrating": "^1.0.11",
     "rxjs": "~6.5.4",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"

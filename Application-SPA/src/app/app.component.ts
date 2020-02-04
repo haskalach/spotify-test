@@ -13,11 +13,12 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     console.log('init')
+    if (this.sharedService.loggedIn()) {
+      this.sharedService.loggedInActive = true;
+    }
   }
 
   logOut() {
-    localStorage.removeItem('token');
-    this.sharedService.loggedInActive = false;
-    this.router.navigate(['/']);
+    this.sharedService.logOut();
   }
 }

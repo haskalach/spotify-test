@@ -4,13 +4,14 @@ import { environment } from 'src/environments/environment';
 import { JwtHelperService } from '@auth0/angular-jwt/src/jwthelper.service';
 import { SpotifyAuthResponse } from '../models/spotify-auth-response';
 import { fromPairs } from 'lodash';
+import { Router } from '@angular/router';
 @Injectable()
 export class SharedService {
   loggedInActive = false;
   authUrl = environment.apiAuthUrl;
   baseUrl = environment.apiUrl;
   jwtHelper = new JwtHelperService();
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
   // redirect to spotify login gate
   login() {
     window.location.href = this.buildAuthUrl();
@@ -46,6 +47,12 @@ export class SharedService {
       return fromPairs(fragment.split('&').map((s) => s.split('='))) as SpotifyAuthResponse;
     }
     return null;
+  }
+
+  logOut() {
+    localStorage.removeItem('token');
+    this.loggedInActive = false;
+    this.router.navigate(['/']);
   }
 
 }
