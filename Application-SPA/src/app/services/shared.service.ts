@@ -6,6 +6,7 @@ import { SpotifyAuthResponse } from '../models/spotify-auth-response';
 import { fromPairs } from 'lodash';
 @Injectable()
 export class SharedService {
+  loggedInActive = false;
   baseUrl = environment.apiUrl;
   jwtHelper = new JwtHelperService();
   constructor(private http: HttpClient) { }
@@ -34,7 +35,7 @@ export class SharedService {
   }
   loggedIn() {
     const token = localStorage.getItem('token');
-    return !this.jwtHelper.isTokenExpired(token);
+    return token !== null;
   }
   extractApiResponse(fragment: string): SpotifyAuthResponse | null {
     if (!!fragment) {

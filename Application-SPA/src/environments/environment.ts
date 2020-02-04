@@ -7,7 +7,7 @@ export const environment = {
   authConfig: {
     client_id: '9fa85936651341258d18bf303bbebe6d',
     response_type: 'token',
-    redirect_uri: 'http://localhost:4200/artist-search',
+    redirect_uri: 'http://localhost:4200/home',
     state: '',
     show_dialog: true,
   },

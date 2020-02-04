@@ -1,1 +1,2 @@
-<button (click)="login()">click</button>
+
+<button (click)="logIn()" *ngIf="!sharedService.loggedInActive">click</button>

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-artist-search',
@@ -9,17 +7,9 @@ import { SharedService } from 'src/app/services/shared.service';
 })
 export class ArtistSearchComponent implements OnInit {
   searchQuery = '';
-  constructor(private route: ActivatedRoute, private sharedService: SharedService, private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
-    console.log(this.route.snapshot.fragment);
-    if (this.route.snapshot.fragment) {
-      const reponse = this.sharedService.extractApiResponse(this.route.snapshot.fragment);
-      // const json = JSON.parse(this.route.snapshot.fragment);
-      console.log({ reponse });
-      localStorage.setItem('token', reponse.access_token);
-      this.router.navigate(['/artist-search']);
-    }
 
   }
 
