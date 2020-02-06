@@ -1,5 +1,5 @@
 import { Artist } from './artist';
-import { ItemResponse } from './main-entity';
+import { Response, ItemResponse } from './main-entity';
 
 export interface SpotifyUrl {
   spotify: string;

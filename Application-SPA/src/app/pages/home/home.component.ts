@@ -13,10 +13,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     if (this.route.snapshot.fragment) {
-      console.log('init');
       const reponse = this.sharedService.extractApiResponse(this.route.snapshot.fragment);
       // const json = JSON.parse(this.route.snapshot.fragment);
-      console.log({ reponse });
       localStorage.setItem('token', reponse.access_token);
       this.sharedService.loggedInActive = true;
       this.router.navigate(['/artist-search']);

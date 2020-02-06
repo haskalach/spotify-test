@@ -20,7 +20,6 @@ export class AlbumSearchComponent implements OnInit {
         this.id = params['id'];
         this.sharedService.albumSearch(this.id).subscribe((next: AlbumResponse) => {
           this.albumsResult = next.items;
-          console.log('album result', this.albumsResult[0].external_urls.spotify)
         });
       }
     });

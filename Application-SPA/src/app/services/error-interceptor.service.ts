@@ -31,8 +31,7 @@ export class ErrorInterceptorService implements HttpInterceptor {
             this.sharedService.logOut();
           }
           if (err instanceof HttpErrorResponse && err.status === 400) {
-            console.log('400 error intercepted');
-
+            // 400 bad request
           }
         }
       )
