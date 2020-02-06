@@ -16,6 +16,7 @@ import { ArtistCardComponent } from './pages/artist-search/artist-card/artist-ca
 import { RatingModule } from 'ng-starrating';
 import { AlbumCardComponent } from './pages/album-search/album-card/album-card.component';
 import { NgxNavbarModule } from 'ngx-bootstrap-navbar';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -43,7 +44,8 @@ export function tokenGetter() {
       }
     }),
     NgxNavbarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PaginationModule.forRoot()
   ],
   providers: [SharedService, { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true },],
   bootstrap: [AppComponent]

@@ -30,10 +30,12 @@ export class SharedService {
     return `${requestAuthUrl}?${params.join('&')}`;
   }
   // artsist search function
-  artistsSearch(searchQuery) {
+  artistsSearch(searchQuery, offset, limit) {
     let params = new HttpParams();
     params = params.append('q', searchQuery);
     params = params.append('type', 'artist');
+    params = params.append('offset', offset);
+    params = params.append('limit', limit);
     return this.http.get(this.baseUrl + 'search', { params });
   }
 

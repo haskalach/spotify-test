@@ -1,4 +1,4 @@
-import { Entity, ItemResponse } from './main-entity';
+import { Response, ItemResponse } from './main-entity';
 
 export interface ArtistInterfaceEntity {
   artists: ArtistResponse;

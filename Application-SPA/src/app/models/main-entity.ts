@@ -21,3 +21,11 @@ export interface ItemResponse extends Entity {
   type: string;
   images: Image[];
 }
+
+export interface Pagination {
+  currentPage: number;
+  offset: number;
+  limit: number;
+  total: number;
+  totalPages: number;
+}

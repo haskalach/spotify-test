@@ -24,6 +24,7 @@
     "bootstrap": "^4.4.1",
     "core-js": "^2.5.4",
     "ng-starrating": "^1.0.11",
+    "ngx-bootstrap": "^5.3.2",
     "ngx-bootstrap-navbar": "0.0.5",
     "rxjs": "~6.5.4",
     "tslib": "^1.9.0",

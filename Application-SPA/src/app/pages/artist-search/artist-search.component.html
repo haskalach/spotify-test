@@ -5,3 +5,19 @@
 <app-artist-card [artists]="artistsResult">
 
 </app-artist-card>
+<div class="pagination-container d-flex justify-content-center">
+  <pagination
+    *ngIf=" pagination.total > 0"
+    [boundaryLinks]="true"
+    [totalItems]="pagination.total"
+    [(ngModel)]="pagination.currentPage"
+    [itemsPerPage]="pagination.limit"
+    (pageChanged)="pageChanged($event)"
+    previousText="&lsaquo;"
+    nextText="&rsaquo;"
+    firstText="&laquo;"
+    lastText="&raquo;"
+    [maxSize]="10"
+  >
+  </pagination>
+</div>
