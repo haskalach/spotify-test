@@ -11,6 +11,7 @@ export class SharedService {
   authUrl = environment.apiAuthUrl;
   baseUrl = environment.apiUrl;
   jwtHelper = new JwtHelperService();
+  searchQuery = '';
   constructor(private http: HttpClient, private router: Router) { }
   // redirect to spotify login gate
   login() {

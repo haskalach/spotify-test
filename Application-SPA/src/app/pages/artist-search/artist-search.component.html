@@ -1,23 +1,13 @@
-<input type="text" class="form-control mb-4 search-control" [(ngModel)]="searchQuery" placeholder="search for an artist"
-  (keyup.enter)="artistSearch()">
+<input type="text" class="form-control mb-4 search-control" [(ngModel)]="sharedservice.searchQuery"
+  placeholder="search for an artist" (keyup.enter)="artistSearch()" #search=ngModel >
 
 
 <app-artist-card [artists]="artistsResult">
 
 </app-artist-card>
 <div class="pagination-container d-flex justify-content-center">
-  <pagination
-    *ngIf=" pagination.total > 0"
-    [boundaryLinks]="true"
-    [totalItems]="pagination.total"
-    [(ngModel)]="pagination.currentPage"
-    [itemsPerPage]="pagination.limit"
-    (pageChanged)="pageChanged($event)"
-    previousText="&lsaquo;"
-    nextText="&rsaquo;"
-    firstText="&laquo;"
-    lastText="&raquo;"
-    [maxSize]="10"
-  >
+  <pagination *ngIf=" pagination.total > 0" [boundaryLinks]="true" [totalItems]="pagination.total"
+    [(ngModel)]="pagination.currentPage" [itemsPerPage]="pagination.limit" (pageChanged)="pageChanged($event)"
+    previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;" [maxSize]="10">
   </pagination>
 </div>

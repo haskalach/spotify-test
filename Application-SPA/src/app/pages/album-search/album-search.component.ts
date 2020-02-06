@@ -10,8 +10,9 @@ import { Album, AlbumResponse } from 'src/app/models/album';
   styleUrls: ['./album-search.component.css']
 })
 export class AlbumSearchComponent implements OnInit {
-  id = 0;
+  id: string;
   albumsResult: Album[];
+  ArtistName;
   constructor(private route: ActivatedRoute, private sharedService: SharedService) { }
 
   ngOnInit() {
@@ -20,6 +21,7 @@ export class AlbumSearchComponent implements OnInit {
         this.id = params['id'];
         this.sharedService.albumSearch(this.id).subscribe((next: AlbumResponse) => {
           this.albumsResult = next.items;
+          this.ArtistName = this.albumsResult[0].artists.find(x => x.id === this.id).name;
         });
       }
     });

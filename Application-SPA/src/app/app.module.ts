@@ -10,7 +10,7 @@ import { AlbumSearchComponent } from './pages/album-search/album-search.componen
 import { ArtistSearchComponent } from './pages/artist-search/artist-search.component';
 import { HomeComponent } from './pages/home/home.component';
 import { JwtModule } from '@auth0/angular-jwt';
-import { FormsModule } from '@angular/forms';
+import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
 import { ErrorInterceptorService } from './services/error-interceptor.service';
 import { ArtistCardComponent } from './pages/artist-search/artist-card/artist-card.component';
 import { RatingModule } from 'ng-starrating';
