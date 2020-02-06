@@ -29,6 +29,7 @@ export class ArtistSearchComponent implements OnInit {
       this.SearchControl.control.setValue(this.sharedservice.searchQuery);
     }
     this.SearchControl.valueChanges.subscribe(next => {
+      console.log({ next })
       this.artistSearch();
     });
   }
@@ -42,6 +43,10 @@ export class ArtistSearchComponent implements OnInit {
     if (this.sharedservice.searchQuery !== '') {
       this.loadItems(this.sharedservice.searchQuery, this.pagination.offset, this.pagination.limit);
     } else {
+      // in case final search was empty and still there is pending data
+      if (this.pending === true) {
+        this.pendingData.unsubscribe();
+      }
       this.pagination.total = 0;
       this.artistsResult = [];
     }
