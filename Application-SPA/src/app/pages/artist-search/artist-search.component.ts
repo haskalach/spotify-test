@@ -27,7 +27,6 @@ export class ArtistSearchComponent implements OnInit {
   ngOnInit() {
     if (this.sharedservice.searchQuery !== '') {
       this.SearchControl.control.setValue(this.sharedservice.searchQuery);
-      this.artistSearch();
     }
     this.SearchControl.valueChanges.subscribe(next => {
       this.artistSearch();
