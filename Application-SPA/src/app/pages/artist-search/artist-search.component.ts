@@ -26,7 +26,6 @@ export class ArtistSearchComponent implements OnInit {
 
   ngOnInit() {
     this.SearchControl.valueChanges.subscribe(next => {
-      console.log({ next });
       this.artistSearch();
     });
   }
