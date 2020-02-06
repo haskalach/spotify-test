@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   constructor(public sharedService: SharedService, private router: Router) { }
 
   ngOnInit() {
-    console.log('init')
+    // in case of refresh check is user already loggedin
     if (this.sharedService.loggedIn()) {
       this.sharedService.loggedInActive = true;
     }

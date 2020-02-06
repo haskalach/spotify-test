@@ -4,6 +4,7 @@
 .cursor-pointer {
   cursor: pointer;
 }
+
 .card {
   height: 100%;
 }
@@ -11,4 +12,11 @@
 .card-body {
   display: flex;
   flex-flow: column;
+}
+
+
+@media (max-width: 576px) {
+  .card-img-top {
+    height: auto !important;
+  }
 }

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ArtistSearchComponent } from './pages/artist-search/artist-search.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AlbumSearchComponent } from './pages/album-search/album-search.component';
+import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -11,16 +12,19 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent,
+    component: HomeComponent
   },
   {
     path: 'artist-search',
     component: ArtistSearchComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'album-search/:id',
     component: AlbumSearchComponent,
-  }
+    canActivate: [AuthGuard]
+  },
+  { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({

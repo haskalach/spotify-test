@@ -1,0 +1,9 @@
+.home-section {
+  height: calc(100vh - 200px);
+  display: flex;
+  /* width: 100%; */
+  flex-direction: column;
+  flex-grow: unset;
+  justify-content: center;
+  align-items: center;
+}

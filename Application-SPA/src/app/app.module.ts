@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +15,7 @@ import { ErrorInterceptorService } from './services/error-interceptor.service';
 import { ArtistCardComponent } from './pages/artist-search/artist-card/artist-card.component';
 import { RatingModule } from 'ng-starrating';
 import { AlbumCardComponent } from './pages/album-search/album-card/album-card.component';
+import { NgxNavbarModule } from 'ngx-bootstrap-navbar';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -40,6 +42,8 @@ export function tokenGetter() {
         blacklistedRoutes: []
       }
     }),
+    NgxNavbarModule,
+    BrowserAnimationsModule
   ],
   providers: [SharedService, { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true },],
   bootstrap: [AppComponent]
