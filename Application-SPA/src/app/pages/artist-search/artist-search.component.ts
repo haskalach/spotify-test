@@ -25,7 +25,11 @@ export class ArtistSearchComponent implements OnInit {
   constructor(public sharedservice: SharedService) { }
 
   ngOnInit() {
+    if (this.sharedservice.searchQuery !== '') {
+      this.SearchControl.control.setValue(this.sharedservice.searchQuery);
+    }
     this.SearchControl.valueChanges.subscribe(next => {
+      console.log({ next })
       this.artistSearch();
     });
   }
@@ -35,6 +39,7 @@ export class ArtistSearchComponent implements OnInit {
     this.pagination.currentPage = 1;
     this.pagination.offset = 0;
     this.pagination.limit = 20;
+    this.sharedservice.searchQuery = this.SearchControl.value;
     if (this.sharedservice.searchQuery !== '') {
       this.loadItems(this.sharedservice.searchQuery, this.pagination.offset, this.pagination.limit);
     } else {
